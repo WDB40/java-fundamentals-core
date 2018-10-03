@@ -1,0 +1,72 @@
+MANAGING GROUPS OF DATA
+    - Arrays is the most simple way to manage data
+        - But they are statically sized
+        - Requires explicit position management
+    - Collections are a more powerful way to manage data
+    - The Role of Collections
+        - Hold and organize data
+            - Iterable
+            - Can be typed
+            - Dynamically sized
+    - Most simple collection is just a list
+    - Some provide ordering, or prevent duplication, or allowing value pairs
+
+COLLECTIONS AND TYPE SAFETY
+    - ArrayList will default to type Object if no type is given
+        - Done through the power of generics
+    - Usually we will restrict the object type of a collection
+    - Generics allow us to restrict the type of objects something can
+        operate on.
+
+COLLECTION INTERFACE
+    - Common features across collections come from the Collection interface
+        - Extends the Iterable interface
+    - Methods
+        size = returns number of elements
+        clear = removes all elements
+        isEmpty = returns true if no elements
+        add = add a single element
+        addAll = add all members from another collection
+        contains = return true if contains elements
+        containsAll = return true if it contains all the elements of another collection
+        remove = remove an element
+        removeAll = remove all elements contained in another collect
+        retainAll = remove all elements not contained in another collection
+
+        All these use the equals method
+
+NEW WITH JAVA 8
+- Lamba expressions
+    - Make it to where we can pass code as arguments
+    - There's another course on it
+
+    - Collection methods with lamba's
+        - forEach
+        - removeIf
+
+CONVERTING FROM COLLECTIONS AND ARRAYS
+- Can convert a collection to an array using toArray() with no arguments
+    - or use toArray(t[]array) to return an array of type T
+- Arrays can be converted to a collection using asList();
+
+DIFFERENT COLLECTION TYPES
+    - Collection interfaces
+        - Gives the contract
+        - Collection
+        - List - maintains order
+        - Queue - specific order with a head element
+        - Set - collection with no duplicates
+        - SortedSet - no duplicates and sorted
+    - Collection classes
+        - ArrayList - list that should be read randomly
+        - LinkedList - list that should be set randomly
+        - HashSet - a set and has table
+        - TreeSet - sortedSet
+
+SORTING
+    - Can be done using the comparable interface
+    - Comparable should be consistent with the equals method
+    - Comparator interface
+        - Perform a sort
+        - Allows one type to set the sort behavior for another
+
