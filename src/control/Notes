@@ -1,0 +1,9 @@
+CLASS LOADING
+    - Searching paths outside the current directory
+    - Can change the CLASSPATH variable
+        - Use with caution
+        - Other applications change and use the CLASSPATH
+
+EXECUTION ENVIRONMENT INFORMATION
+    - Systems.getProperty
+    - System.getenv();
