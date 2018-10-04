@@ -1,8 +1,6 @@
 package collections;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Application {
 
@@ -53,7 +51,7 @@ public class Application {
 //        classList.forEach(m -> System.out.println(m.getLabel()));
 
 
-        TreeSet<MyClass> tree = new TreeSet<>(new MyComparator());
+       /* TreeSet<MyClass> tree = new TreeSet<>(new MyComparator());
 
         tree.add(new MyClass("2222", "ghi"));
         tree.add(new MyClass("3333", "abc"));
@@ -62,7 +60,35 @@ public class Application {
 
         tree.forEach(myClass -> System.out.println(myClass));
 
+*/
 
+        Map<String, String> map = new HashMap<>();
+
+        map.put("2222", "ghi");
+        map.put("3333", "abc");
+        map.put("1111", "def");
+
+        String s1 = map.get("3333");
+        String s2 = map.get("9999");
+        String s3 = map.getOrDefault("9999", "Not Found");
+
+        map.forEach((key, value) -> System.out.println(key + " | " + value));
+        map.replaceAll((key, value) -> value.toUpperCase());
+        map.forEach((key, value) -> System.out.println(key + " | " + value));
+
+        SortedMap<String, String> sortedMap = new TreeMap<>();
+
+        sortedMap.put("2222", "ghi");
+        sortedMap.put("3333", "abc");
+        sortedMap.put("1111", "def");
+        sortedMap.put("6666", "xyz");
+        sortedMap.put("4444", "mno");
+        sortedMap.put("5555", "pqr");
+
+        sortedMap.forEach((key, value) -> System.out.println(key + " | " + value));
+
+        SortedMap<String, String> headMap = sortedMap.headMap("3333");
+        sortedMap.forEach((key, value) -> System.out.println(key + " | " + value));
 
     }
 }

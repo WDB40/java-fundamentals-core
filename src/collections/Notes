@@ -70,3 +70,32 @@ SORTING
         - Perform a sort
         - Allows one type to set the sort behavior for another
 
+MAPS
+    - Consist of a key/value pairs
+    - Each key is unique, but there can be duplicate values or null values
+
+    Interfaces
+        - Map - basic map operations
+        - SortedMap - map whose keys are sorted
+    Classes
+        - HashMap - general purpose map
+        - TreeMap - sorted map, has comparable and comparator
+
+    Map Interface methods
+        - put - add key and value
+        - putIfAbsent - add if key is absent or value for key is null
+        - get - return value for key or null for not found
+        - getOrDefault - same as get, but returns default value instead of null
+        values - get a colletion of all the values
+        - keySet - get a set of the keys contained
+        - forEach
+        - replaceAll - lambda for each keys value
+
+SORTED MAP
+
+    - Methods
+        firstKey = returns first key
+        lastKey = returns last key
+        headMap = returns map for all keys less than certain value
+        tailMap = returns map for all keys greater than or equal to the value passed.
+        subMap = returns map for keys greater than or equal to starting key and less than ending key
