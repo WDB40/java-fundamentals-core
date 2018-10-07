@@ -1,0 +1,57 @@
+A class must implement the Runnable interface
+- Therefore the class much have the void run() method.
+- To call that run method, you
+    - Thread thread = new Thread(myObject);
+    - thread.start();
+
+- Need to make sure the calling thread waits for the threads to complete
+- Create arrays of the threads
+    - Loop through each thread and
+    - thread.join()
+    - Makes the app wait for the threads to finish, aka block
+
+- Thread pools abstract the details of threading
+    - Creates a queue for the tasks to be done
+    - Uses
+        - ExecutorService es = Executors.newFixedThreadPool(3)
+            - 3 threads available
+        - es.submit(myObject);
+        - es.shutdown();
+        - es.awaitTermination(60, TimeUnit.SECONDS);
+            - This is blocking the app for this amount of time
+             to allow it to finish
+
+- Types for managing the retrieval of information from threads
+    - Callable <Object> interface
+        - Return results or throw exceptions
+        - USed instead of Runnable
+            - call() instead of run()
+            - the call method can throw exception
+    - Future interface
+        - Represents the results of a thread task
+        - Future<Object>{} = results = new Future[size];
+            - results[i] = es.submit(myObject);
+            - Later, loop through the results array
+                - results[i].get();
+                - Will need to catch exceptions here
+                    - ExecutionException e
+                        - e.getCause() for the actually exception
+    - The ExecutorService has a get method to get the return from callable
+- Synchronized methods can be used, so that only one instance of a class can use
+    that method at a time
+    - Good for writer and readers of modified data
+    - A lot of overhead, so don't do it too much
+    - You can have synchronize blocks of code
+
+- ThreadSafe wrappers for Collections
+    - SynchronizedList
+    - SynchronizedMap
+
+- Java Blocking Queues
+    - LinkedBlockingQueue
+    - PriorityBlockingQueue
+
+- java.util.concurrent
+- java.util.concurrent.atomic
+
+- Semaphores
