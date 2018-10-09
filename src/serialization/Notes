@@ -1,0 +1,57 @@
+Serialization
+
+- Can persist objects using byte stream using reflection
+
+- Serialization
+    - Storing an object-graph to a byte stream
+        - Object and all its references
+- Deserializing
+    - Restoring an object-graph from a byte stream
+
+- Done through these main types
+    - Serializable interface
+        - Has no methods
+        - Marker interface
+    - ObjectOutputStream
+        - Serializes object-graph to stream
+    - ObjectInputStream
+        - Deserializes stream to object-graph
+
+- All members of Serializable need to be serializable
+    - Primitive types are by default
+    - Classes/Objects need to implement the interface
+
+- Serializing an Object
+    - ObjectOutputStream is how we serialize an object
+        - objectStream.writeObject(myObject)
+    - ObjectInputStream is how we read a serialized object
+        - objectStream.readObject();
+        - The class that it is reading in needs to be in the classpath
+
+- Deserializing an object that has changed
+    - Serial version unique identifier
+    - Serial version
+    - Looks at the class file for the class
+        - serialver
+
+- What changes version
+    - Name
+    - Interfaces
+    - Members
+
+- We can add the field
+    - private static final long serialVersionUID = 1L
+
+- Any new fields will be added as their default values
+
+- Customize this with the writeObject and readObject methods
+    - We implement these to have custom serialization
+    - Accepts the ObjectInputStream or ObjectOutputStream depending on what you're doing
+    - We generally do stuff with the readObject
+    - For reading
+        - Using fields = inStream.readFields();
+        - fields.get("myField", defaultValue);
+
+- We can exclude certain fields from serialization
+    - transient keyword to exclude a value
+    - We may use this for fields that are always calculated
