@@ -1,0 +1,59 @@
+- Annotations are a way to express the context and intent of the code
+    - They act as annotations
+
+- Some annotations are for classes, methods, or fields
+
+- Example annotations
+    - Override
+    - Deprecated
+    - SuppressWarnings
+        - @SuppressWarnings("deprecation")
+
+- Only a few annotations with core platform
+    - Java EE has a lot of annotations
+
+- Mostly used for compilation
+    - Main used to create annotations
+
+- Annotations are similar to interfaces (special kind of interface)
+
+- Can get annotation using reflection
+    - myObject.getAnnotation(MyAnnotation.class)
+
+- You associate values with annotations
+    - BUt they are declared like methods
+
+- Interfaces are able things it can do
+- Annotation is about values it has
+
+- Annotations are only available at compilation by default
+    - You can change the retention for the annotation, so that
+        it is available at run time
+
+- Retention Policies
+    - Source
+    - Class (default)
+    - Runtime
+    - @Retention(RetentionPolicy.RUNTIME)
+
+- Can specify the target for the annotations
+    - @Target
+    - Accepts ElementType
+        - Use array to specify multiple ElementTypes
+
+- Can set a default for an annotation value
+
+- Assign the element a value without using the name
+    - Can only be setting one element on it
+    - Must be the variable called value
+
+- Annotation values can be...
+    - Primitive type
+    - String
+    - Enum
+    - Annotation
+    - Class<?> information (not an instance of a class)
+    - Can be an array of the type above
+
+- Annotation Class<?> Element
+    - Can create relationships via this metadata

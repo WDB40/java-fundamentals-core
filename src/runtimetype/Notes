@@ -1,0 +1,49 @@
+- With Reflection, we can examine types are run time
+    - Dynamically execute and access members
+
+- Apps do not always control the types they use.
+    - Advanced app design
+    - Common tools and frameworks
+
+- Dynamically load types
+    - Type not known at compile time
+
+- Can fully examine objects are runtime
+    - Real type and base type
+    - Interfaces
+    - Members
+        - methods and variables
+
+- Can use to determine the types capabilities
+    - Type inspector/browser
+    - Schema generation
+
+- Can access full capability of type
+    - Construct instances
+    - Access fields
+    - Call methods
+
+- Configurable application designs
+    - External control on tasks
+
+- Inversion of control application design
+    - App provides the fundamental behavior
+    - Classes add the specialized behavior
+
+- Type = data type
+
+- Java uses types to model type issues
+    - Fundamental type is the Class class
+        - Each type has a class instance
+        - Described the type in detail
+
+- There are classes for Fields and Methods and Constructors
+    - Can be used to access the information around those
+    - Can access either
+        - The declared ones, where are all defined in the class itself
+        - Regular, which gives all public ones even if inherited
+    - Can access fields, methods, and constructors using the names and parameters
+    - Can use the getModifiers on these as well
+
+- Objects can be created using reflection
+    - Can be easily done with just the new instance
